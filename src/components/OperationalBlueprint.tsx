@@ -6,10 +6,7 @@ import {
   Cpu,
   Search,
   Rocket,
-  LifeBuoy,
-  ShieldCheck,
-  FileText,
-  TrendingUp
+  LifeBuoy
 } from 'lucide-react';
 
 const blueprintSteps = [

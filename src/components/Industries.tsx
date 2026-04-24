@@ -145,7 +145,7 @@ const Industries: React.FC = () => {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-4"
             >
-              {currentIndustries.map((industry, i) => (
+              {currentIndustries.map((industry) => (
                 <div
                   key={industry.name}
                   className={`group relative rounded-[2.5rem] overflow-hidden bg-background border border-white/5 ${industry.className}`}

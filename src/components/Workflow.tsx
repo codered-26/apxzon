@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, type Variants } from 'framer-motion';
 import {
   Users,
   Layout,
@@ -37,7 +37,7 @@ const CellIcon: React.FC<{ icon: React.ElementType; color?: string }> = ({
   </div>
 );
 
-const StatRow: React.FC<{ stats: StatItem[]; color?: string }> = ({ stats, color = "text-foreground" }) => (
+const StatRow: React.FC<{ stats: StatItem[]; color?: string }> = ({ stats }) => (
   <div className="grid grid-cols-3 gap-2 mb-5">
     {stats.map((s) => (
       <div
@@ -57,7 +57,6 @@ const StatRow: React.FC<{ stats: StatItem[]; color?: string }> = ({ stats, color
 
 const ProgressPoint: React.FC<{ point: PointItem; color?: string; bgColor?: string }> = ({
   point,
-  color = "text-foreground",
   bgColor = "bg-foreground/60"
 }) => (
   <div className="bg-foreground/5 rounded-xl px-4 py-3 mb-2.5 last:mb-0 border border-foreground/5">
@@ -147,7 +146,7 @@ const Workflow: React.FC = () => {
     ['0% 100%', '100% 100%']
   );
 
-  const fadeVariant = {
+  const fadeVariant: Variants = {
     hidden: { opacity: 0, y: 24 },
     visible: (i: number) => ({
       opacity: 1,
