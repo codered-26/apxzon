@@ -73,7 +73,17 @@ const Navbar: React.FC = () => {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-          className={`w-full max-w-5xl px-6 py-3 rounded-[2rem] flex justify-between items-center pointer-events-auto transition-all duration-500 ${isScrolled ? 'nav-glass shadow-2xl scale-[1.02]' : 'bg-transparent border border-transparent'}`}
+          style={{
+            backdropFilter: isScrolled ? 'blur(16px)' : 'none',
+            WebkitBackdropFilter: isScrolled ? 'blur(16px)' : 'none',
+            backgroundColor: isScrolled 
+              ? (isDarkMode ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.4)') 
+              : 'transparent',
+            border: isScrolled 
+              ? (isDarkMode ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.1)') 
+              : '1px solid transparent',
+          }}
+          className={`w-full max-w-5xl px-6 py-3 rounded-[2rem] flex justify-between items-center pointer-events-auto transition-all duration-500 ${isScrolled ? 'shadow-2xl scale-[1.02]' : ''}`}
         >
           <motion.div
             initial={{ opacity: 0, x: -20 }}
