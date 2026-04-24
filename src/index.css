@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+/* ── Define CSS custom properties per theme ─────────────────────────── */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --border: 220 13% 91%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+  }
+
+  .dark {
+    --background: 224 71.4% 2.1%;
+    --foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --border: 215 27.9% 16.9%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+  }
+}
+
+/* ── Register them so Tailwind v4 generates the utility classes ───────── */
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --spacing-30: 7.5rem;
+
+  /* Font stack — Onest geometric grotesque (matches reference image) */
+  --font-sans: "Onest", ui-sans-serif, system-ui, -apple-system, "BlinkMacSystemFont", "Segoe UI", sans-serif;
+
+  /* Custom animations */
+  --animate-blob: blob 7s infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-liquid: liquid 20s linear infinite;
+
+  @keyframes move-grid {
+    from {
+      background-position: 0 0;
+    }
+
+    to {
+      background-position: -24px -24px;
+    }
+  }
+
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  @keyframes liquid {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+      transform: translate(10%, 10%) rotate(180deg);
+    }
+
+    100% {
+      transform: translate(0, 0) rotate(360deg);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-120%) skewX(-12deg);
+    }
+
+    100% {
+      transform: translateX(220%) skewX(-12deg);
+    }
+  }
+}
+
+/* ── Base body styles ─────────────────────────────────────────────────── */
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Subtext / descriptions — match bold geometric style from reference */
+p,
+span,
+li,
+label {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+::selection {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* ── Glass utility classes ─────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+:root:not(.dark) .glass-card {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+:root:not(.dark) .glass-card:hover {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.glass-nav {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-nav {
+  border-bottom: 1px solid rgba(255, 0, 0, 0.05);
+}
+
+/* ── Pattern backgrounds ─────────────────────────────────────────────── */
+.bg-dot-grid {
+  background-image: radial-gradient(circle,
+      hsl(var(--foreground) / 0.2) -1px,
+      transparent 2px);
+  background-size: 24px 24px;
+  animation: move-grid 2s linear infinite;
+}
+
+/* ── Floating navbar glass container ──────────────────────────────────── */
+.nav-glass {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(14px) saturate(190%);
+  -webkit-backdrop-filter: blur(14px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.264),
+    0 1px 0 rgba(255, 255, 255, 0.636) inset;
+}
+
+.dark .nav-glass {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(14px) saturate(190%);
+  -webkit-backdrop-filter: blur(14px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 1px 0 rgba(255, 255, 255, 0.06) inset;
+}
+
+/* ── Pill-style nav links ────────────────────────────────────────────── */
+.nav-item-glass {
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .nav-item-glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-item-glass:hover {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.dark .nav-item-glass:hover {
+  background: rgba(246, 255, 0, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Liquid glass CTA button ──────────────────────────────────────────── */
+.liquid-glass-btn {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 128, 0, 0.252);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1.5px solid rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.06) inset;
+  transition: all 0.25s ease;
+}
+
+.liquid-glass-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 75%);
+  animation: shimmer 2.5s linear infinite;
+  pointer-events: none;
+}
+
+.liquid-glass-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.12),
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.04) inset;
+  transform: translateY(-1px);
+}
+
+.dark .liquid-glass-btn {
+  background: rgba(255, 128, 0, 0.321);
+  border: 1px solid rgba(237, 233, 233, 0.467);
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.12) inset;
+}
+
+.dark .liquid-glass-btn::before {
+  background: linear-gradient(110deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.12) 50%,
+      transparent 75%);
+}
+
+.dark .liquid-glass-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Liquid background blobs ──────────────────────────────────────────── */
+.liquid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background-color: hsl(var(--background));
+  transition: background-color 0.3s ease;
+}
+
+.blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 9999px;
+  filter: blur(80px);
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 100%);
+}
+
+/* ── Custom scrollbar ─────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.3);
+}
