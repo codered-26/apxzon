@@ -19,16 +19,9 @@ const App: React.FC = () => {
         <Hero />
         <Services />
         <Industries />
-
-
-
-
         <OperationalBlueprint />
         <Technologies />
-
-
         <Workflow />
-
         <ContactForm />
       </main>
       <Footer />
