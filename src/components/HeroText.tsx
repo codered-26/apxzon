@@ -26,7 +26,7 @@ const HeroText: React.FC<HeroTextProps> = ({
                 initial={{ opacity: 0, filter: "blur(10px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ delay: (wordIndex * 5 + i) * 0.04 + 0.3, duration: 0.8 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] font-black text-foreground tracking-tight block"
+                className="text-[2.6rem] sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] font-black text-foreground tracking-tight block"
                 style={{ fontWeight: 900 }}
               >
                 {char}
@@ -43,7 +43,7 @@ const HeroText: React.FC<HeroTextProps> = ({
                   repeat: Infinity,
                   repeatDelay: 4,
                 }}
-                className="absolute inset-0 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] font-black text-green-300 z-10 pointer-events-none block"
+                className="absolute inset-0 text-[2.6rem] sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] font-black text-green-300 z-10 pointer-events-none block"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 35%, 0 35%)", fontWeight: 900 }}
               >
                 {char}
@@ -60,7 +60,7 @@ const HeroText: React.FC<HeroTextProps> = ({
                   repeat: Infinity,
                   repeatDelay: 4,
                 }}
-                className="absolute inset-0 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] font-black text-foreground/40 z-10 pointer-events-none block"
+                className="absolute inset-0 text-[2.6rem] sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] font-black text-foreground/40 z-10 pointer-events-none block"
                 style={{
                   clipPath: "polygon(0 35%, 100% 35%, 100% 65%, 0 65%)",
                   fontWeight: 900
@@ -80,7 +80,7 @@ const HeroText: React.FC<HeroTextProps> = ({
                   repeat: Infinity,
                   repeatDelay: 4,
                 }}
-                className="absolute inset-0 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] font-black text-green-300 z-10 pointer-events-none block"
+                className="absolute inset-0 text-[2.6rem] sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] font-black text-green-300 z-10 pointer-events-none block"
                 style={{
                   clipPath: "polygon(0 65%, 100% 65%, 100% 100%, 0 100%)",
                   fontWeight: 900
