@@ -24,15 +24,17 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-0">
-              <motion.button
+              <motion.a
+                href="https://forms.fillout.com/t/4yHG7x7K4Uus"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-6 py-3.5 sm:px-8 sm:py-4 rounded-4xl bg-green-300 text-gray-900 font-bold flex items-center justify-center gap-2 group transition-all shadow-lg shadow-foreground/20 border-1 border-gray-500"
               >
-                Start Your Project
+                Book a call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              </motion.a>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

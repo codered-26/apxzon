@@ -121,14 +121,16 @@ const Navbar: React.FC = () => {
             ))}
             <div className="h-6 w-px bg-border/50 mx-2" />
             <ThemeToggle />
-            <motion.button
+            <motion.a
+              href="https://forms.fillout.com/t/4yHG7x7K4Uus"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection('contact')}
               className="px-6 lg:px-8 py-3 rounded-4xl liquid-glass-btn text-foreground text-sm font-extrabold shadow-xl"
             >
               Get Started
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Mobile Nav Right Side */}
@@ -161,12 +163,14 @@ const Navbar: React.FC = () => {
                 </button>
               ))}
               <hr className="border-border/30 my-2" />
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="w-full py-4 rounded-2xl liquid-glass-btn text-foreground font-bold text-lg"
+              <a
+                href="https://forms.fillout.com/t/4yHG7x7K4Uus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 rounded-2xl liquid-glass-btn text-foreground font-bold text-lg text-center"
               >
                 Get Started
-              </button>
+              </a>
             </div>
           </motion.div>
         )}
