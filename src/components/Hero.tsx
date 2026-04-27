@@ -19,13 +19,14 @@ const Hero: React.FC = () => {
                 Digital Presence
               </span>
             </h1>
-            <p className="text-base sm:text-xl md:text-2xl text-foreground/80 mb-6 sm:mb-10 leading-relaxed max-w-2xl mx-auto font-medium px-2">
-              From mobile applications to cloud-native architectures, we build scalable, high-performance solutions tailored to your business needs.
+            <p className="text-base sm:text-xl md:text-2xl text-foreground/80 mb-6 sm:mb-10 leading-relaxed max-w-1.5xl mx-auto font-medium px-2">
+              From mobile, web applications to cloud-native architectures, we build scalable high-performance solutions tailored to your business needs.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-0">
               <motion.a
                 href="https://forms.fillout.com/t/4yHG7x7K4Uus"
+
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}

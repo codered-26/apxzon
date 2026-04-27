@@ -76,11 +76,11 @@ const Navbar: React.FC = () => {
           style={{
             backdropFilter: isScrolled ? 'blur(16px)' : 'none',
             WebkitBackdropFilter: isScrolled ? 'blur(16px)' : 'none',
-            backgroundColor: isScrolled 
-              ? (isDarkMode ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.4)') 
+            backgroundColor: isScrolled
+              ? (isDarkMode ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.4)')
               : 'transparent',
-            border: isScrolled 
-              ? (isDarkMode ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.1)') 
+            border: isScrolled
+              ? (isDarkMode ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.1)')
               : '1px solid transparent',
           }}
           className={`w-full max-w-5xl px-6 py-3 rounded-[2rem] flex justify-between items-center pointer-events-auto transition-all duration-500 ${isScrolled ? 'shadow-2xl scale-[1.02]' : ''}`}
@@ -121,16 +121,14 @@ const Navbar: React.FC = () => {
             ))}
             <div className="h-6 w-px bg-border/50 mx-2" />
             <ThemeToggle />
-            <motion.a
-              href="https://forms.fillout.com/t/4yHG7x7K4Uus"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('contact')}
               className="px-6 lg:px-8 py-3 rounded-4xl liquid-glass-btn text-foreground text-sm font-extrabold shadow-xl"
             >
               Get Started
-            </motion.a>
+            </motion.button>
           </div>
 
           {/* Mobile Nav Right Side */}
@@ -163,14 +161,12 @@ const Navbar: React.FC = () => {
                 </button>
               ))}
               <hr className="border-border/30 my-2" />
-              <a
-                href="https://forms.fillout.com/t/4yHG7x7K4Uus"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-4 rounded-2xl liquid-glass-btn text-foreground font-bold text-lg text-center"
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="w-full py-4 rounded-2xl liquid-glass-btn text-foreground font-bold text-lg"
               >
                 Get Started
-              </a>
+              </button>
             </div>
           </motion.div>
         )}
