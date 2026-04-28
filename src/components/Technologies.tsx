@@ -41,11 +41,7 @@ const Technologies: React.FC = () => {
         <InteractiveGrid />
       </div>
 
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-80">
-        <div className="absolute top-20 left-[10%] w-32 h-32 border border-foreground/5 rounded-3xl" />
-        <div className="absolute bottom-40 right-[15%] w-48 h-48 border border-foreground/5 rounded-[3rem]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-foreground/[0.02] rounded-full blur-3xl saturate-150" />
-      </div>
+
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-8">
