@@ -117,7 +117,7 @@ const Industries: React.FC = () => {
               viewport={{ once: true }}
               className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter leading-none"
             >
-              Industries <span className="text-green-300">We Serve</span>
+              Industries <span className="text-green-300 block sm:inline">We Serve</span>
             </motion.h2>
           </div>
 
