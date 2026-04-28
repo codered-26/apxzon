@@ -53,9 +53,9 @@ const Technologies: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter"
+            className="text-[22px] sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter"
           >
-            Powering Your Success with{' '}
+            Powering Your Success&nbsp;with{' '}
             <span className="text-green-300 md:ml-80 block md:inline">World Class Stack</span>
           </motion.h2>
         </div>
