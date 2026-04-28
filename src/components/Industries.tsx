@@ -109,7 +109,7 @@ const Industries: React.FC = () => {
   return (
     <section id="industries" className="py-12 lg:py-16 bg-background relative overflow-hidden selection:bg-green-300/30 px-4 sm:px-8 md:px-12 lg:px-16">
       <div className="container mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-6 ">
           <div className="max-w-3xl">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -117,7 +117,7 @@ const Industries: React.FC = () => {
               viewport={{ once: true }}
               className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter leading-none"
             >
-              Industries <span className="text-green-300 block sm:inline">We Serve</span>
+              Industries <span className="text-green-300 block sm:inline ">We Serve</span>
             </motion.h2>
           </div>
 

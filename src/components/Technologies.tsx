@@ -56,7 +56,8 @@ const Technologies: React.FC = () => {
             className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter"
           >
             Powering Your Success with{' '}
-            <span className="text-green-300 ml-80">World Class Stack</span>
+            <br className="md:hidden" />
+            <span className="text-green-300 md:ml-80">World Class Stack</span>
           </motion.h2>
         </div>
 
