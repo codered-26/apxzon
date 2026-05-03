@@ -139,7 +139,6 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Nav Right Side */}
           <div className="flex md:hidden items-center space-x-4">
-            <ThemeToggle />
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-foreground">
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -167,6 +166,10 @@ const Navbar: React.FC = () => {
                 </button>
               ))}
               <hr className="border-border/30 my-2" />
+              <div className="flex items-center justify-between">
+                <span className="text-foreground/60 font-semibold text-sm">Theme</span>
+                <ThemeToggle />
+              </div>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="w-full py-4 rounded-2xl liquid-glass-btn text-foreground font-bold text-lg"
