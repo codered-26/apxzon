@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import logoLight from '../assets/1.png';
 import logoDark from '../assets/2.png';
+import logoFirst from '../assets/3.png';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -88,13 +89,18 @@ const Navbar: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center cursor-pointer"
+            className="flex items-center gap-2 cursor-pointer"
             onClick={() => scrollToSection('home')}
           >
             <img
+              src={logoFirst}
+              alt="Logo"
+              className="h-14 md:h-10 w-auto object-contain transition-all duration-300 -mt-1"
+            />
+            <img
               src={isDarkMode ? logoDark : logoLight}
-              alt="apxzon"
-              className="h-8 md:h-12 w-auto object-contain transition-all duration-300"
+              alt="Algowill"
+              className="h-14 md:h-16 w-auto object-contain transition-all duration-300"
             />
           </motion.div>
 

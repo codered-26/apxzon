@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Globe, Mail, MessageSquare, Share2 } from 'lucide-react';
 import logoLight from '../assets/1.png';
 import logoDark from '../assets/2.png';
+import logoFirst from '../assets/3.png';
 
 const Footer: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -21,11 +22,16 @@ const Footer: React.FC = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-10 sm:mb-12">
           <div className="col-span-1 md:col-span-2">
-            <div className="mb-6">
+            <div className="mb-6 flex items-center gap-2">
+              <img
+                src={logoFirst}
+                alt="Logo"
+                className="h-10 w-auto object-contain transition-all duration-300"
+              />
               <img
                 src={isDarkMode ? logoDark : logoLight}
-                alt="apxzon"
-                className="h-16 w-auto object-contain transition-all duration-300 -ml-5"
+                alt="algowill"
+                className="h-16 w-auto object-contain transition-all duration-300 mt-2"
               />
             </div>
             <p className="text-foreground/80 text-sm max-w-sm leading-relaxed mb-8 font-medium">
@@ -33,7 +39,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://apxzon.com"
+                href="https://algowill.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Website"
@@ -42,7 +48,7 @@ const Footer: React.FC = () => {
                 <Globe size={20} />
               </a>
               <a
-                href="mailto:apxzon0@gmail.com"
+                href="mailto:algowill0@gmail.com"
                 aria-label="Email"
                 className="p-2 rounded-full glass-card text-foreground/60 hover:text-foreground hover:border-foreground/50 transition-all"
               >
@@ -62,7 +68,7 @@ const Footer: React.FC = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   if (navigator.share) {
-                    navigator.share({ title: 'Apxzon', url: window.location.href });
+                    navigator.share({ title: 'algowill', url: window.location.href });
                   } else {
                     navigator.clipboard.writeText(window.location.href);
                     alert('Link copied to clipboard!');
@@ -91,7 +97,7 @@ const Footer: React.FC = () => {
 
         <div className="pt-8 sm:pt-12 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
           <p className="text-foreground/40 text-xs">
-            © {new Date().getFullYear()} Apxzon. All rights reserved.
+            © {new Date().getFullYear()} algowill. All rights reserved.
           </p>
           <div className="flex space-x-8 text-xs text-foreground/40">
             <a href="#" className="hover:text-foreground">Sitemap</a>

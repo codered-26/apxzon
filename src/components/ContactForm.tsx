@@ -19,7 +19,7 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/apxzon0@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/algowill0@gmail.com", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ const ContactForm: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold">Email Us</h4>
-                  <p className="text-foreground/80 font-medium">apxzon0@gmail.com</p>
+                  <p className="text-foreground/80 font-medium">algowill0@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 sm:gap-6">

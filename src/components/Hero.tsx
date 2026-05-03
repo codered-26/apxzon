@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
               <HeroText text="Elevate Your" /><br />
               <span className="text-foreground text-gray-500 font-black whitespace-nowrap">
                 Digital Presence
-              </span> 
+              </span>
             </h1>
             <p className="text-base sm:text-xl md:text-2xl text-foreground/80 mb-6 sm:mb-10 leading-relaxed max-w-1.5xl mx-auto font-medium px-2">
               From mobile, web applications to cloud-native architectures, we build scalable high-performance solutions tailored to your business needs.
