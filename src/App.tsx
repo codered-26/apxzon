@@ -17,8 +17,9 @@ const App: React.FC = () => {
       <Navbar />
       <main>
         <Hero />
-        <Services />
+
         <Industries />
+        <Services />
         <OperationalBlueprint />
         <Technologies />
         <Workflow />

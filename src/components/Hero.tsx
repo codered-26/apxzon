@@ -14,8 +14,8 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-[2.6rem] sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-4 sm:mb-8 leading-[1.1]">
-              <HeroText text="Elevate Your" /><br />
-              <span className="text-foreground text-gray-500 font-black whitespace-nowrap">
+              <HeroText className='text-8xl' text="Elevate Your" /><br />
+              <span className="  text-foreground text-gray-500 font-black whitespace-nowrap">
                 Digital Presence
               </span>
             </h1>
